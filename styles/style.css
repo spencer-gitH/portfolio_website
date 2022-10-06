@@ -1,0 +1,259 @@
+/* General Styling */
+:root {
+    --text: #404553;
+    --grey: #F5F6F7;
+    --white: #FFFFFF;
+    --date: #9fa2a9;
+    font-size: 16px;
+}
+
+@font-face {
+    font-family: 'Euclid Circular A';
+    src: url('../fonts/EuclidCircularA-Bold.woff2') format('woff2'),
+        url('../fonts/EuclidCircularA-Bold.woff') format('woff'),
+        url('../fonts/EuclidCircularA-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Euclid Circular A';
+    src: url('../fonts/EuclidCircularA-Medium.woff2') format('woff2'),
+        url('../fonts/EuclidCircularA-Medium.woff') format('woff'),
+        url('../fonts/EuclidCircularA-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Euclid Circular A';
+    src: url('../fonts/EuclidCircularA-Regular.woff2') format('woff2'),
+        url('../fonts/EuclidCircularA-Regular.woff') format('woff'),
+        url('../fonts/') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Medium.woff2') format('woff2'),
+        url('../fonts/Roboto-Medium.woff') format('woff'),
+        url('../fonts/Roboto-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Euclid Circular A';
+    color: var(--text);
+}
+
+body {
+    background-color: var(--grey);
+    padding: 4rem 2rem; 
+}
+
+main {
+    display: grid;
+    max-width: 900px;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:    "about about"
+                            "projects info";
+    gap: 1.25rem;
+}
+
+h1 {
+    font-family: 'Roboto';
+    font-size: 1.5rem;
+    padding-bottom: 0.375rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    padding-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    padding-bottom: .5rem;
+}
+
+h4 {
+    color: var(--date);
+    font-weight: 400;
+}
+
+p {
+    line-height: 1.5rem;
+}
+
+.bubble {
+    background-color: white;
+    border-radius: 0.75rem;
+    width: 100%;
+    padding: 2rem 1.5rem;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* About */
+.about { 
+    grid-area: about;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.memoji {
+    width: 50px;
+    height: 50px;
+    flex: none;
+    background-image: url('../images/memoji.jpg');
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+/* Projects */
+.projects {
+    grid-area: projects;
+}
+
+.projects > .bubble {
+    background-color: white;
+    border-radius: 0.75rem;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.projects h2 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.projects-container > .project  {
+    padding: 1.6875rem 1.5rem;
+}
+
+.projects-container > .project:first-child  {
+    padding-top: 0;
+}
+
+.projects-container > :last-child {
+    padding-bottom: 0rem;
+}
+
+.projects-container > :not(:last-child) {
+    border-bottom: solid 1px var(--grey);
+}
+
+.project:hover {
+    background-color: var(--grey);
+}
+
+.project > p {
+    padding-top: 1rem;
+}
+
+/* Contact */
+.skills {
+    grid-area: skills;
+}
+
+.contacts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.icon-frame {
+    height: 24px;
+    width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-frame img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Skills */
+.skills-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1.5rem;
+}
+
+.skill {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+/* Education */
+.education-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.major {
+    font-weight: 500;
+}
+
+/* Certification */
+.certification-container {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.certificate {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+/* Mobile View */
+@media only screen and (max-width: 480px) {
+    :root {
+        font-size: 12px;
+    }
+    body {
+        padding: 3 rem 0;
+        width: 100%;
+        font-size: 12px;
+    }
+    main {
+        max-width: 90%;
+        display:flex;
+        flex-direction: column;
+    }
+}
